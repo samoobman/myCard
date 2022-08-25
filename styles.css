@@ -1,0 +1,414 @@
+* {
+    font-family: Calibri;
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgba(19, 19, 19, 0.8);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgba(44, 44, 44, 0.8);
+}
+
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(44, 44, 44, 0.8) rgba(19, 19, 19, 0.8);
+}
+
+.back {
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background: url(pics/rain2.jpg) no-repeat;
+    -moz-background-size: cover ;
+    -webkit-background-size: cover ;
+    -o-background-size: cover ;
+    background-size: cover ;
+    z-index: -2;
+}
+
+.rain {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.rain.back-row {
+    display: block;
+    bottom: 0;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.drop {
+    position: fixed;
+    bottom: 100%;
+    width: 15px;
+    height: 120px;
+    pointer-events: none;
+    animation: drop 0.3s linear infinite;
+    z-index: -1;
+}
+
+@keyframes drop {
+    0% {
+        transform: translateY(0vh);
+    }
+    75% {
+        transform: translateY(90vh);
+    }
+    100% {
+        transform: translateY(90vh);
+    }
+}
+
+.stem {
+    width: 1px;
+    height: 80%;
+    background: linear-gradient(to bottom, rgba(64, 64, 64, 0.8), rgba(64, 64, 64, 0.8));
+    animation: stem 0.5s linear infinite;
+    z-index: -1;
+}
+
+@keyframes stem {
+    0% {
+        opacity: 1;
+    }
+    65% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.big-container-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nameContainer {
+    margin-left: 5%;
+}
+
+h1, h3, h4, h5 {
+    color: white;
+}
+
+p {
+    color: white;
+    margin-left: 20px;
+}
+
+h5 {
+    text-align: right;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+}
+
+.firstLink {
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.secondLink {
+    padding-left: 20px;
+}
+
+#name {
+    padding-top: 1.5%;
+    padding-left: 3%;
+}
+
+@media (max-width: 1290px) {
+    .big-container-top {
+        display: block;
+        text-align: center;
+    }
+
+    .btn3 {
+        display: none;
+    }
+
+    .dropdown-menu3 {
+        display: none;
+    }
+
+    .nameContainer {
+        margin-left: 0;
+    }
+}
+
+#info {
+    margin: 0 5%;
+    padding: 4%;
+    line-height: 120%;
+}
+
+.btn3 {
+    align-self: center;
+    background-color: rgba(0,0,0,0);
+    z-index: 999;
+    cursor: pointer;
+    border: none;
+    min-width: 130px;
+    min-height: 130px;
+    max-width: 130px;
+    max-height: 130px;
+    border-radius: 100%;
+    font-size: 15px;
+    margin-right: 40%;
+    animation: bounce 15s infinite, bulging 1s infinite;
+    box-shadow: 0 0 15px white inset, 0 0 3em white, 0 0 3em white;
+    opacity: 0.2;
+}
+
+.btn3:hover {
+    animation: bounce 15s infinite, bulging2 1s infinite;
+    animation-play-state: paused, running;
+}
+
+.dropdown-menu3 {
+    color: rgba(231, 231, 231, 1);
+    opacity: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 1);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 13%;
+    top: 0;
+    left: 0;
+    right: 0;
+    line-height: 150%;
+    border: 2px solid #d00000;
+    z-index: -1;
+    text-align: center;
+}
+
+.dropdown-menu3.active {
+    opacity: 1;
+    transition: all 0.8s ease;
+    z-index: 100;
+}
+
+@keyframes bounce {
+    0%,100%{
+        transform: translate(0px, 0px);
+    }
+    10% {
+        transform: translate(300px, 50px);
+    }
+    20% {
+        transform: translate(450px, 200px);
+    }
+    30% {
+        transform: translate(600px, 400px);
+    }
+    40% {
+        transform: translate(400px, 250px);
+    }
+    50% {
+        transform: translate(600px, 600px);
+    }
+    60% {
+        transform: translate(300px, 500px);
+    }
+    70% {
+        transform: translate(200px, 300px);
+    }
+    80% {
+        transform: translate(100px, 250px);
+    }
+    90% {
+        transform: translate(200px, 100px);
+    }
+}
+
+/*@keyframes bulging {*/
+/*    0%,100%{*/
+/*        background: radial-gradient(#000000 50%, gray 80%);*/
+
+/*    }*/
+/*    5% {*/
+/*        background: radial-gradient(#000000 40%, gray 70%, rgba(0,0,0,0) 80%);*/
+
+/*    }*/
+/*    10% {*/
+/*        background: radial-gradient(#000000 30%, gray 60%, rgba(0,0,0,0) 70%);*/
+
+/*    }*/
+/*    15% {*/
+/*        background: radial-gradient(#000000 20%, gray 50%, rgba(0,0,0,0) 60%);*/
+
+/*    }*/
+/*    20% {*/
+/*        background: radial-gradient(#000000 10%, gray 40%, rgba(0,0,0,0) 50%);*/
+
+/*    }*/
+/*    25% {*/
+/*        background: radial-gradient(#000000 0%, gray 30%, rgba(0,0,0,0) 40%);*/
+
+/*    }*/
+/*    30% {*/
+/*        background: radial-gradient(#000000 0%, gray 20%, rgba(0,0,0,0) 30%);*/
+
+/*    }*/
+/*    35% {*/
+/*        background: radial-gradient(#000000 0%, gray 10%, rgba(0,0,0,0) 20%);*/
+
+/*    }*/
+/*    40% {*/
+/*        background: radial-gradient(darkred 0%, rgba(0,0,0,0) 10%);*/
+
+/*    }*/
+/*    45% {*/
+/*        background: radial-gradient(darkred 0%, gray 10%, rgba(0,0,0,0) 20%);*/
+
+/*    }*/
+/*    50% {*/
+/*        background: radial-gradient(darkred 0%, gray 20%, rgba(0,0,0,0) 30%);*/
+
+/*    }*/
+/*    55% {*/
+/*        background: radial-gradient(darkred 0%, gray 30%, rgba(0,0,0,0) 40%);*/
+
+/*    }*/
+/*    60% {*/
+/*        background: radial-gradient(#000000 10%, gray 40%, rgba(0,0,0,0) 50%);*/
+
+/*    }*/
+/*    65% {*/
+/*        background: radial-gradient(#000000 20%, gray 50%, rgba(0,0,0,0) 60%);*/
+
+/*    }*/
+/*    70% {*/
+/*        background: radial-gradient(#000000 30%, gray 60%, rgba(0,0,0,0) 70%);*/
+
+/*    }*/
+/*    75% {*/
+/*        background: radial-gradient(#000000 40%, gray 70%, rgba(0,0,0,0) 80%);*/
+
+/*    }*/
+/*    80% {*/
+/*        background: radial-gradient(#000000 50%, gray 80%, rgba(0,0,0,0) 90%);*/
+
+/*    }*/
+/*    85% {*/
+/*        background: radial-gradient(#000000 40%, gray 70%, rgba(0,0,0,0) 80%);*/
+
+/*    }*/
+/*    90% {*/
+/*        background: radial-gradient(#000000 30%, gray 60%, rgba(0,0,0,0) 70%);*/
+
+/*    }*/
+/*    95% {*/
+/*        background: radial-gradient(#000000 40%, gray 70%, rgba(0,0,0,0) 80%);*/
+
+/*    }*/
+/*}*/
+
+@keyframes bulging2 {
+    0%,100%{
+        background: radial-gradient(#000000 50%, darkred 80%);
+
+    }
+    5% {
+        background: radial-gradient(#000000 40%, darkred 70%, rgba(0,0,0,0) 80%);
+
+    }
+    10% {
+        background: radial-gradient(#000000 30%, darkred 60%, rgba(0,0,0,0) 70%);
+
+    }
+    15% {
+        background: radial-gradient(#000000 20%, darkred 50%, rgba(0,0,0,0) 60%);
+
+    }
+    20% {
+        background: radial-gradient(#000000 10%, darkred 40%, rgba(0,0,0,0) 50%);
+
+    }
+    25% {
+        background: radial-gradient(#000000 0%, darkred 30%, rgba(0,0,0,0) 40%);
+
+    }
+    30% {
+        background: radial-gradient(#000000 0%, darkred 20%, rgba(0,0,0,0) 30%);
+
+    }
+    35% {
+        background: radial-gradient(#000000 0%, darkred 10%, rgba(0,0,0,0) 20%);
+
+    }
+    40% {
+        background: radial-gradient(darkred 0%, rgba(0,0,0,0) 10%);
+
+    }
+    45% {
+        background: radial-gradient(darkred 0%, darkred 10%, rgba(0,0,0,0) 20%);
+
+    }
+    50% {
+        background: radial-gradient(darkred 0%, darkred 20%, rgba(0,0,0,0) 30%);
+
+    }
+    55% {
+        background: radial-gradient(darkred 0%, darkred 30%, rgba(0,0,0,0) 40%);
+
+    }
+    60% {
+        background: radial-gradient(#000000 10%, darkred 40%, rgba(0,0,0,0) 50%);
+
+    }
+    65% {
+        background: radial-gradient(#000000 20%, darkred 50%, rgba(0,0,0,0) 60%);
+
+    }
+    70% {
+        background: radial-gradient(#000000 30%, darkred 60%, rgba(0,0,0,0) 70%);
+
+    }
+    75% {
+        background: radial-gradient(#000000 40%, darkred 70%, rgba(0,0,0,0) 80%);
+
+    }
+    80% {
+        background: radial-gradient(#000000 50%, darkred 80%, rgba(0,0,0,0) 90%);
+
+    }
+    85% {
+        background: radial-gradient(#000000 40%, darkred 70%, rgba(0,0,0,0) 80%);
+
+    }
+    90% {
+        background: radial-gradient(#000000 30%, darkred 60%, rgba(0,0,0,0) 70%);
+
+    }
+    95% {
+        background: radial-gradient(#000000 40%, darkred 70%, rgba(0,0,0,0) 80%);
+
+    }
+}
+
